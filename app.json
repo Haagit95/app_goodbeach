@@ -24,8 +24,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       }
-    },
-    "web": {
+    }
+     "web": {
       "favicon": "./assets/favicon.png"
     }
   }
