@@ -20,7 +20,6 @@ export default function Tela_Praiano({ navigation }) {
         title="estabelecimento"
         onPress={() => tela_Passagem()}
       />
-
     </View>
   );
 }

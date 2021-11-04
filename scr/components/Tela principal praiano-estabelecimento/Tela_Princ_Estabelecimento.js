@@ -13,6 +13,7 @@ export default function Tela_Estabelecimento({ Navigation}) {
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
