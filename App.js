@@ -9,13 +9,12 @@ const Stack = createNativeStackNavigator();
 
 function MyStack() {
   return (
-    <Stack.Navigator initialRouteName="Tela Praiano">
-      <Stack.Screen name="Tela Praiano" component={Tela_Praiano} />
-      <Stack.Screen name="Tela_Estabelecimento" component={Tela_Estabelecimento} />
+    <Stack.Navigator initialRouteName="Praiano">
+      <Stack.Screen name="Praiano" component={Tela_Praiano} />
+      <Stack.Screen name="Estabelecimento" component={Tela_Estabelecimento} />    
     </Stack.Navigator>
   );
 }
-
 
 export default function App() {
   return(

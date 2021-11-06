@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 export default function Tela_Estabelecimento({ Navigation}) {
   return (
     <View style={styles.container}>
-      <Text>Tela Estabelecimento</Text>
+      <Text>Pontuação Atual:</Text>
       <StatusBar style="auto" />
     </View>
   );
