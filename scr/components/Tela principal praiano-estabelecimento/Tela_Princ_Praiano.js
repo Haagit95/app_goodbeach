@@ -1,324 +1,349 @@
 import * as React from 'react';
+import Checkbox from 'expo-checkbox';
 import { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Image, Text, View, Button, TouchableOpacity, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { CheckBox } from 'react-native-elements';
-import { TextInput } from 'react-native-paper';
+import { RadioButton, TextInput} from 'react-native-paper';
 
-function Pergunta_1({ navigation }) {
-  const [isSelectedSim, setSelected1] = useState(false)
-  const [isSelectedNao, setSelected2] = useState(false)
+
+
+  function Pergunta_1({ navigation }) {
+  const [checked, setChecked] = React.useState('');
+
   return (     
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={styles.txt}>O estabelecimento apresentou o App?</Text>
-      <View style={styles.check}>
-      <CheckBox 
-        title="Sim"
-        checkedIcon="check"
-        uncheckedIcon="square-o"
-        checkedColor="green"
-        uncheckedColor="blue"  
-        checked={isSelectedSim}   
-        onPress={() => setSelected1(!isSelectedSim)} 
-      />
-      <CheckBox 
-        title="Não"
-        checkedIcon="check"
-        uncheckedIcon="square-o"
-        checkedColor="green"
-        uncheckedColor="blue"  
-        checked={isSelectedNao}   
-        onPress={() => setSelected2(!isSelectedNao)} 
-      />
+        <View style={styles.check}>
+          
+          <RadioButton
+            value="first"
+            status={ checked === 'first' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('first')}
+          />
+          <Text>Sim</Text>
+
+          <RadioButton
+            value="second"
+            status={ checked === 'second' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('second')}
+          />
+          <Text>Não</Text>
+          
       </View>
-      <Button
-        title="Próxima"
-        onPress={() => navigation.navigate('Pergunta 2')}
-      />
+      
+        <View style={styles.ViewBt2}>
+          <View style={{marginHorizontal:10}}>
+            <Button        
+             title="Enviar"
+             onPress={() => alert('Avaliação salva!!')}
+            />
+          </View>
+            <View>
+              <Button 
+                title="Próxima"
+                onPress={() => navigation.navigate('Pergunta 2')}
+              />
+          </View>
+        </View>
     </View>
   );
-}
+  }
 
-function Pergunta_2({ navigation }) {
-  const [isSelected2, setSelected3] = useState(false)
-  const [isSelected4, setSelected4] = useState(false)
-  const [isSelected6, setSelected5] = useState(false)
-  const [isSelected8, setSelected6] = useState(false)
-  const [isSelected10, setSelected7] = useState(false)
-    return (   
-     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>  
+  function Pergunta_2({ navigation }) {
+
+    const [checked, setChecked] = React.useState('');
+
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={styles.txt}>Qual o nível de higiene do estabelecimento?</Text>
-        <View style={styles.check}>
-        <CheckBox 
-          title="2"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelected2}   
-          onPress={() => setSelected3(!isSelected2)} 
-        />
-        <CheckBox 
-          title="4"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelected4}   
-          onPress={() => setSelected4(!isSelected4)} 
-        />
-        <CheckBox 
-          title="6"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelected6}   
-          onPress={() => setSelected5(!isSelected6)} 
-        />
-        <CheckBox 
-          title="8"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelected8}   
-          onPress={() => setSelected6(!isSelected8)} 
-        />
-        <CheckBox 
-          title="10"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelected10}   
-          onPress={() => setSelected7(!isSelected10)} 
-        />
+        <View style={styles.ViewBt}>
+          <RadioButton
+            value="first"
+            status={ checked === 'first' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('first')}
+          />
+          <Text style={{padding:8}} >2</Text>
+          <RadioButton
+            value="second"
+            status={ checked === 'second' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('second')}
+          />
+          <Text style={{padding:8}}>4</Text>
+          <RadioButton
+            value="tree"
+            status={ checked === 'tree' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('tree')}
+          />
+          <Text style={{padding:8}}>6</Text>
+          <RadioButton
+            value="four"
+            status={ checked === 'four' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('four')}
+          />
+          <Text style={{padding:8}}>8</Text>
+          <RadioButton
+            value="five"
+            status={ checked === 'five' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('five')}
+          />
+          <Text style={{padding:8}}>10</Text>
+         
         </View>
-  
-        <Button
-          title="Próxima"
-          onPress={() => navigation.navigate('Pergunta 3')}
-        />
-      </View>
+
+        <View style={styles.ViewBt2}>
+          <View style={{marginHorizontal:10}}>
+            <Button          
+             title="Enviar"
+             onPress={() => alert('Avaliação salva!')}
+            />
+          </View>
+            <Button 
+              title="Próxima"
+              onPress={() => navigation.navigate('Pergunta 3')}
+            />
+          </View>
+    </View>
     );
   }
 
-
-
   function Pergunta_3 ({ navigation }) {
-    const [isSelectedSim1, setSelected8] = useState(false)
-    const [isSelectedNao1, setSelected9] = useState(false)
+    const [checked, setChecked] = React.useState('');
+
     return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> 
-        <Text style={styles.txt}>O estabelecimento mantém lixeiras para uso?</Text>
-      <View style={styles.check}>
-      <CheckBox 
-        title="Sim"
-        checkedIcon="check"
-        uncheckedIcon="square-o"
-        checkedColor="green"
-        uncheckedColor="blue"  
-        checked={isSelectedSim1}   
-        onPress={() => setSelected8(!isSelectedSim1)} 
-      />
-      <CheckBox 
-        title="Não"
-        checkedIcon="check"
-        uncheckedIcon="square-o"
-        checkedColor="green"
-        uncheckedColor="blue"  
-        checked={isSelectedNao1}   
-        onPress={() => setSelected9(!isSelectedNao1)} 
-      />
-      </View>
-        <Button
-          title="Próxima"
-          onPress={() => navigation.navigate('Pergunta 4')}
-        />
-      </View>
-    );
+     <Text style={styles.txt}>O estabelecimento mantém lixeiras para uso?</Text>
+        <View style={styles.check}>
+          
+          <RadioButton
+            value="first"
+            status={ checked === 'first' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('first')}
+          />
+          <Text>Sim</Text>
+
+          <RadioButton
+            value="second"
+            status={ checked === 'second' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('second')}
+          />
+          <Text>Não</Text>
+        </View>
+
+        <View style={styles.ViewBt2}>
+          <View style={{marginHorizontal:10}}>
+            <Button          
+             title="Enviar"
+             onPress={() => alert('Avaliação salva!')}
+            />
+          </View>
+            <Button 
+              title="Próxima"
+              onPress={() => navigation.navigate('Pergunta 4')}
+            />
+          </View>
+       </View>
+   );
   }
 
   function Pergunta_4 ({ navigation }) {
-    const [isSelectedSim2, setSelected10] = useState(false)
-    const [isSelectedNao2, setSelected11] = useState(false)
+    const [checked, setChecked] = React.useState('');
+
     return (
      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> 
         <Text style={styles.txt}>A quantidade de lixeiras disponíveis é suficiente para uso?</Text>
         <View style={styles.check}>
-        <CheckBox 
-          title="Sim"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelectedSim2}   
-          onPress={() => setSelected10(!isSelectedSim2)} 
-        />
-        <CheckBox 
-          title="Não"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelectedNao2}   
-          onPress={() => setSelected11(!isSelectedNao2)} 
-        />
+        <RadioButton
+            value="first"
+            status={ checked === 'first' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('first')}
+          />
+          <Text>Sim</Text>
+
+          <RadioButton
+            value="second"
+            status={ checked === 'second' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('second')}
+          />
+          <Text>Não</Text>
+
         </View>
-        <Button
-          title="Próxima"
-          onPress={() => navigation.navigate('Pergunta 5')}
-        />
-      </View>
+
+        <View style={styles.ViewBt2}>
+          <View style={{marginHorizontal:10}}>
+            <Button          
+             title="Enviar"
+             onPress={() => alert('Avaliação salva!')}
+            />
+          </View>
+              <Button 
+                title="Próxima"
+                onPress={() => navigation.navigate('Pergunta 5')}
+              />
+          </View>
+       </View>
     );
   }
 
   function Pergunta_5 ({ navigation }) {
-    const [isSelectedSim3, setSelected12] = useState(false)
-    const [isSelectedNao3, setSelected13] = useState(false)
+    const [checked, setChecked] = React.useState('');
+
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={styles.txt}>O estabelecimento fornece material biodegradável? Canudos, copos de papel?</Text>
         <View style={styles.check}>
-        <CheckBox 
-          title="Sim"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelectedSim3}   
-          onPress={() => setSelected12(!isSelectedSim3)} 
-        />
-        <CheckBox 
-          title="Não"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelectedNao3}   
-          onPress={() => setSelected13(!isSelectedNao3)} 
-        />
+        <RadioButton
+            value="first"
+            status={ checked === 'first' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('first')}
+          />
+          <Text>Sim</Text>
+
+          <RadioButton
+            value="second"
+            status={ checked === 'second' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('second')}
+          />
+          <Text>Não</Text>
         </View>
-        <Button
-          title="Próxima"
-          onPress={() => navigation.navigate('Pergunta 6')}
-        />
-      </View>
+
+        <View style={styles.ViewBt2}>
+          <View style={{marginHorizontal:10}}>
+            <Button          
+             title="Enviar"
+             onPress={() => alert('Avaliação salva!')}
+            />
+          </View>
+              <Button 
+                title="Próxima"
+                onPress={() => navigation.navigate('Pergunta 6')}
+              />
+          </View>
+       </View>
     );
   }
 
   function Pergunta_6 ({ navigation }) {
-    const [isSelectedSim4, setSelected14] = useState(false)
-    const [isSelectedNao4, setSelected15] = useState(false)
+    const [checked, setChecked] = React.useState('');
+
     return (
      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>  
-        <Text style={styles.txt}>A limpeza da areia quanto a lixos industrializados é satisfatória?</Text>
+      <Text style={styles.txt}>A limpeza da areia quanto a lixos industrializados é satisfatória?</Text>
         <View style={styles.check}>
-        <CheckBox 
-          title="Sim"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelectedSim4}   
-          onPress={() => setSelected14(!isSelectedSim4)} 
-        />
-        <CheckBox 
-          title="Não"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelectedNao4}   
-          onPress={() => setSelected15(!isSelectedNao4)} 
-        />
+          <RadioButton
+            value="first"
+            status={ checked === 'first' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('first')}
+          />
+          <Text>Sim</Text>
+
+          <RadioButton
+            value="second"
+            status={ checked === 'second' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('second')}
+          />
+          <Text>Não</Text>
+
         </View>
-        <Button
-          title="Próxima"
-          onPress={() => navigation.navigate('Pergunta 7')}
-        />
-      </View>
+
+        <View style={styles.ViewBt2}>
+          <View style={{marginHorizontal:10}}>
+            <Button          
+             title="Enviar"
+             onPress={() => alert('Avaliação salva!')}
+            />
+          </View>
+              <Button 
+                title="Próxima"
+                onPress={() => navigation.navigate('Pergunta 7')}
+              />
+          </View>
+       </View>
     );
   }
 
   function Pergunta_7 ({ navigation }) {
-    const [isSelectedSim5, setSelected16] = useState(false)
-    const [isSelectedNao5, setSelected17] = useState(false)
+    const [checked, setChecked] = React.useState('');
+    
     return (
      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>  
         <Text style={styles.txt}> O estabelecimento passou alguma informação de concientização sobre o cuidado com as vidas marinhas?</Text>
         <View style={styles.check}>
-          <CheckBox 
-            title="Sim"
-            checkedIcon="check"
-            uncheckedIcon="square-o"
-            checkedColor="green"
-            uncheckedColor="blue"  
-            checked={isSelectedSim5}   
-            onPress={() => setSelected16(!isSelectedSim5)} 
+          <RadioButton
+            value="first"
+            status={ checked === 'first' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('first')}
           />
-          <CheckBox 
-            title="Não"
-            checkedIcon="check"
-            uncheckedIcon="square-o"
-            checkedColor="green"
-            uncheckedColor="blue"  
-            checked={isSelectedNao5}   
-            onPress={() => setSelected17(!isSelectedNao5)} 
+          <Text>Sim</Text>
+
+          <RadioButton
+            value="second"
+            status={ checked === 'second' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('second')}
           />
+          <Text>Não</Text>
+
         </View>
-        <Button
-          title="Próxima"
-          onPress={() => navigation.navigate('Pergunta 8')}
-        />
-      </View>
+
+        <View style={styles.ViewBt2}>
+          <View style={{marginHorizontal:10}}>
+            <Button          
+             title="Enviar"
+             onPress={() => alert('Avaliação salva!')}
+            />
+          </View>
+              <Button 
+                title="Próxima"
+                onPress={() => navigation.navigate('Pergunta 8')}
+              />
+          </View>
+       </View>
     );
   }
 
   function Pergunta_8 ({ navigation }) {
-    const [isSelectedSemValor, setSelected18] = useState(false)
-    const [isSelectedPoucoValor, setSelected19] = useState(false)
-    const [isSelectedMod, setSelected20] = useState(false)
+    const [checked, setChecked] = React.useState('');
+
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={styles.txt}>Como você avalia esta experiência na sua vida?</Text>
+        
         <View style={styles.check}>
-        <CheckBox 
-          title="Sem valor"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelectedSemValor}   
-          onPress={() => setSelected18(!isSelectedSemValor)} 
-        />
-        <CheckBox 
-          title="Pouco valor"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelectedPoucoValor}   
-          onPress={() => setSelected19(!isSelectedPoucoValor)} 
-        />
-        <CheckBox 
-          title="Modificadora"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="blue"  
-          checked={isSelectedMod}   
-          onPress={() => setSelected20(!isSelectedMod)} 
-        />
+          <RadioButton
+            value="first"
+            status={ checked === 'first' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('first')}
+          />
+          <Text>Sem Valor</Text>
+
+          <RadioButton
+            value="second"
+            status={ checked === 'second' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('second')}
+          />
+          <Text>Pouco Valor</Text>
+          <RadioButton
+            value="tree"
+            status={ checked === 'tree' ? 'checked' : 'unchecked' }
+            onPress={() => setChecked('tree')}
+          />
+          <Text>Modificadora</Text>
+
         </View>
-        <Button
-          title="Próxima"
-          onPress={() => navigation.navigate('Crítica e Sugestões')}
-        />
-      </View>
+
+        <View style={styles.ViewBt2}>
+          <View style={{marginHorizontal:10}}>
+            <Button          
+             title="Enviar"
+             onPress={() => alert('Avaliação salva!')}
+            />
+          </View>
+              <Button 
+                title="Próxima"
+                onPress={() => navigation.navigate('Crítica e Sugestões')}
+              />
+          </View>
+       </View>
     );
   }
 
@@ -332,41 +357,47 @@ function Pergunta_2({ navigation }) {
         <View>
             <TextInput
             style={styles.txtIn}
-            label="Críticas ou sugestões"
+            label="Deixe usa críticas ou sugestões"
             value={text}
             onChangeText={text => setText(text)}
            />
         </View>
-        <Button
-          title="Próxima"
-          onPress={() => navigation.navigate('Fim')}
-        />
-      </View>
+        <View style={styles.ViewBt2}>
+          <View style={{marginHorizontal:10}}>
+            <Button          
+             title="Enviar"
+             onPress={() => alert('Avaliação salva!')}
+            />
+          </View>
+              <Button 
+                title="Próxima"
+                onPress={() => navigation.navigate('Fim')}
+              />
+          </View>
+       </View>
     );
   }
 
   function Tela_fim () {
-
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-
+        <Text style = {{fontSize:30, padding:20}}>Obrigado pela Participação!</Text>
         <View>
-            <Text style={{fontSize:25}}>Obrigado pela Participação!</Text>
-        </View>
-
-     </View>
-       
+          <Image
+            style={{width: 250, height:250}}
+            source={require('../../Image/iconn.png')}/>
+         </View>
+      </View>
     );
   }
 
 const Stack = createNativeStackNavigator();
 
-function Tela_Praiano() {
+function Tela_Praiano({navigation}) {
   return (
     <View style={{backgroundColor:'purple', flex:1}}> 
     <><NavigationContainer independent={true}>
-          <Stack.Navigator  initialRouteName="Pergunta1">
-           
+          <Stack.Navigator  initialRouteName="Pergunta 1">      
               <Stack.Screen name="Pergunta 1" component={Pergunta_1} />
               <Stack.Screen name="Pergunta 2" component={Pergunta_2} />
               <Stack.Screen name="Pergunta 3" component={Pergunta_3} />
@@ -384,20 +415,16 @@ function Tela_Praiano() {
       <View style={styles.ViewBt}>
               <TouchableOpacity
                   style={styles.button}
+                  onPress={navigation.navigate('Pergunta 1')}
               >
-                  <Text>Cancelar</Text>
+                  <Text>Recomeçar</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                   style={styles.button}
+                  onPress={() => alert('Voltar ao Menu')}
               >
                   <Text>Menu</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                  style={styles.button}
-              >
-                  <Text>Salvar</Text>
               </TouchableOpacity>
           </View></>
        </View>
@@ -418,12 +445,11 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      width: 50,
-      height: 30,
-      margin:30,
+      padding:15
+      
     },
     button: {
-      backgroundColor: "#A9A9A9",
+      backgroundColor: "#fff",
       padding: 10,
       borderRadius: 10,
       margin: 20,
@@ -440,6 +466,10 @@ const styles = StyleSheet.create({
       width: 300,
       height: 50,
       margin: 20
-    }
+    },
+    ViewBt2:{
+      flexDirection: "row",
+      padding:20
+    },
    
   });
