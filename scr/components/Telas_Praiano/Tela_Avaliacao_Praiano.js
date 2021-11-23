@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Checkbox from 'expo-checkbox';
 import { useState } from 'react';
 import { StyleSheet, Image, Text, View, Button, TouchableOpacity, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
