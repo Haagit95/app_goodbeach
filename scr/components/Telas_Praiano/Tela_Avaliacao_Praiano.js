@@ -392,7 +392,7 @@ import { RadioButton, TextInput} from 'react-native-paper';
 
 const Stack = createNativeStackNavigator();
 
-function Tela_Praiano({navigation}) {
+function Tela_Avaliacao_Praiano({navigation}) {
   return (
     <View style={{backgroundColor:'purple', flex:1}}> 
     <><NavigationContainer independent={true}>
@@ -430,7 +430,7 @@ function Tela_Praiano({navigation}) {
   );
 }
 
-export default Tela_Praiano ;
+export default Tela_Avaliacao_Praiano ;
 
 const styles = StyleSheet.create({
     txt: {

@@ -3,6 +3,17 @@ import { PieChart } from 'react-native-svg-charts';
 import { Text } from 'react-native-svg';
 
 
+export default function Ranking() {
+    return(
+      <Text>
+        Ranking     
+      </Text>  
+    )
+  }
+
+
+
+/*
 class piie extends React.PureComponent {
 
     render() {
@@ -57,3 +68,5 @@ class piie extends React.PureComponent {
 
 }
 export default piie;
+*/
+

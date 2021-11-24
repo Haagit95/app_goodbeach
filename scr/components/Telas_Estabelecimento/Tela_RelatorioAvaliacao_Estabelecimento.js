@@ -105,7 +105,7 @@ function sugestoes() {
 
 const Stack = createNativeStackNavigator();
 
-export default function Tela_Estabelecimento({ navigation}) {
+export default function Tela_RelatorioAvaliacao_Estabelecimento({ navigation}) {
   return (
     <View style={{backgroundColor:'purple', flex:1}}> 
     <><NavigationContainer independent={true}>
