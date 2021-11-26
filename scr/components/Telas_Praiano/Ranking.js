@@ -1,6 +1,6 @@
 import React from 'react';
-import { PieChart } from 'react-native-svg-charts';
-import { Text } from 'react-native-svg';
+
+import { Text } from 'react-native-paper';
 
 
 export default function Ranking() {
