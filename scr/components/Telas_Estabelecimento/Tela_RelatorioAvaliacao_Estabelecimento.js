@@ -97,35 +97,44 @@ function relatorio_perg (navigation){
   );
 }
 
-function sugestoes() {
-  return(
-    <Text>Sugestões e criticas</Text>
-  )
-}
 
 const Stack = createNativeStackNavigator();
 
 export default function Tela_RelatorioAvaliacao_Estabelecimento({ navigation}) {
+  const voltar_menuP = () => {
+    navigation.reset({
+      index:0,
+      routes:[{name:"Estabelecimento"}]
+    })
+  }
+
+  const mensagem = () => {
+    navigation.reset({
+      index:0,
+      routes:[{name:"Msgm"}]
+    })
+  }
+  
   return (
     <View style={{backgroundColor:'purple', flex:1}}> 
     <><NavigationContainer independent={true}>
           <Stack.Navigator  initialRouteName="Relatório de Questões">      
             <Stack.Screen name="Relatório de Questões" component={relatorio_perg} />
-            <Stack.Screen name="mensagens" component={sugestoes} />
+          
           </Stack.Navigator>
       </NavigationContainer>
 
       <View style={styles.ViewBt}>
               <TouchableOpacity
                   style={styles.button}
-                  onPress={() => alert('Ir para o menu!')}
+                  onPress={() => voltar_menuP()}
               >
                   <Text>Menu</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                   style={styles.button}
-                  onPress={() => navigation.navigate()}
+                  onPress={() => mensagem()}
               >
                   <Text>Mensagens</Text>
               </TouchableOpacity>

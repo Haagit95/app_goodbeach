@@ -1,17 +1,13 @@
 import React from 'react';
+import {View, Text} from 'react-native';
 
-import { Text } from 'react-native-paper';
-
-
-export default function Ranking() {
-    return(
-      <Text>
-        Ranking     
-      </Text>  
-    )
-  }
-
-
+export default function Ranking () {
+    <View>
+        <Text>
+        Ranking
+        </Text>
+    </View>
+}
 
 /*
 class piie extends React.PureComponent {
