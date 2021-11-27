@@ -10,6 +10,8 @@ import Tela_Avaliacao_Praiano from './scr/components/Telas_Praiano/Tela_Avaliaca
 import Ranking from './scr/components/Telas_Praiano/Ranking';
 import Tela_RelatorioAvaliacao_Estabelecimento from './scr/components/Telas_Estabelecimento/Tela_RelatorioAvaliacao_Estabelecimento';
 import Mensagens from './scr/components/Telas_Estabelecimento/Mensagens';
+import Conta from './scr/components/Tela_Login/Conta';
+import Esqueceu from './scr/components/Tela_Login/Esqueceu';
 /////////////////////////////////////////////////////////////////////////
 
 const Stack = createNativeStackNavigator();
@@ -17,9 +19,11 @@ const Stack = createNativeStackNavigator();
 function MyStack() {
   return (
 
-    <Stack.Navigator initialRouteName="Msgm">
+    <Stack.Navigator initialRouteName="Login">
 
-      <Stack.Screen name="Login" component={Tela_Login} /> 
+      <Stack.Screen name="Login" component={Tela_Login} />
+      <Stack.Screen name="Conta" component={Conta} /> 
+      <Stack.Screen name="Esqueceu" component={Esqueceu} />
     
       <Stack.Screen name="Avaliação_Praiano" component={Tela_Avaliacao_Praiano} />
       <Stack.Screen name="Ranking_praiano" component={Ranking} /> 

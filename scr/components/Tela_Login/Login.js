@@ -7,7 +7,7 @@ import { Input, Text } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useState } from 'react';
 
-export default function Tela_Login({ Navigation}) {
+export default function Tela_Login({ navigation}) {
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
     const Entrar = () =>{
@@ -15,6 +15,27 @@ export default function Tela_Login({ Navigation}) {
         console.log(email)
         console.log(password)
     }
+
+    const Tela_Esqueceu = ()=>{
+      navigation.reset({
+        index:0,
+        routes:[{name: "Esqueceu"}]
+      })
+    }
+
+    const Tela_registre = ()=>{
+      navigation.reset({
+        index:0,
+        routes:[{name: "Conta"}]
+      })
+    }
+
+    // const Tela_Entrar = ()=>{
+    //   navigation.reset({
+    //     index:0,
+    //     routes:[{name: "Esqueceu"}]
+    //   })
+    // } // DEFINIR QUAL TELA ACESSAR
 
   return (
     <View style={styles.container}>
@@ -37,7 +58,30 @@ export default function Tela_Login({ Navigation}) {
         onChangeText={value=> setPassword(value)}
         keyboardType="password"
       />
-    <Button
+      <View style={{flexDirection:'row', justifyContent:'center', marginBottom: 5}}>
+        <Button
+            icon={
+            <Icon
+            name="check"
+            size={10}
+            color="white"
+            />
+        }
+        title="Entrar"
+        />
+            <Button
+            icon={
+            <Icon
+            name="check"
+            size={10}
+            color="white"
+            />
+        }
+        title="Esqueceu sua Senha?"
+        onPress={()=> Tela_Esqueceu()}
+        />
+    </View>
+        <Button
         icon={
         <Icon
         name="check"
@@ -45,8 +89,11 @@ export default function Tela_Login({ Navigation}) {
         color="white"
         />
     }
-    title="Entrar"
+    title="Registre-se"
+    onPress={()=> Tela_registre()}
     />
+
+
 
     {/* <Button
             icon={
@@ -68,7 +115,7 @@ export default function Tela_Login({ Navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#00FA9A',
     alignItems: 'center',
     justifyContent: 'center',
   },
