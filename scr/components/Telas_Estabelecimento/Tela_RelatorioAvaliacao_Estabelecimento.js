@@ -9,88 +9,64 @@ function relatorio_perg (navigation){
   <ScrollView>
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={styles.txt}>O estabelecimento apresentou o App?</Text>
-        <View style={styles.check}>
-            <RadioButton          
-            />
-            <Text style={{fontSize:12}}>Sim = 25%</Text>
-            <RadioButton  
-          />
-          <Text style={{fontSize:12}}>Não = 75%</Text>
+        <View>
+           
+          <Text>Sim = 25%    </Text>
+           
+          <Text>Não = 75%</Text>
         </View>
         <Text style={styles.txt}>Qual o nível de higiene do estabelecimento?</Text>
-        <View style={styles.check}>
-            <RadioButton            
-            />
-            <Text>2 = 20%</Text>
-            <RadioButton  
-            />
-            <Text>4 = 20%</Text>
-            <RadioButton            
-            />
-            <Text>6 = 25%</Text>
-            <RadioButton  
-          />
-          <Text>8 = 20%</Text>
-          <RadioButton  
-          />
-          <Text>10 = 15%</Text>
+        <View >
+            
+          <Text>2 = 20%   </Text>
+          <Text>4 = 20%   </Text>
+          <Text>6 = 25%   </Text>
+          <Text>8 = 20%   </Text>
+          <Text>10 = 15%   </Text>
+
         </View>
           <Text style={styles.txt}>O estabelecimento mantém lixeiras para uso?</Text>
-          <View style={styles.check}>
-              <RadioButton            
-              />
-              <Text>Sim = 25%</Text>
-              <RadioButton  
-            />
+          <View >
+             
+            <Text>Sim = 25%    </Text>
             <Text>Não = 75%</Text>
+
         </View>
         <Text style={styles.txt}>A quantidade de lixeiras disponíveis é suficiente para uso?</Text>
-        <View style={styles.check}>
-            <RadioButton            
-            />
-            <Text>Sim = 25%</Text>
-            <RadioButton  
-          />
-          <Text>Não = 75%</Text>
+        <View >
+            
+           <Text>Sim = 25%    </Text>
+           <Text>Não = 75%</Text>
+
         </View>
         <Text style={styles.txt}>O estabelecimento fornece material biodegradável? Canudos, copos de papel?</Text>
-        <View style={styles.check}>
-            <RadioButton            
-            />
-            <Text>Sim = 25%</Text>
-            <RadioButton  
-          />
-          <Text>Não = 75%</Text>
+        <View >
+           
+            <Text>Sim = 25%    </Text>
+            <Text>Não = 75%</Text>
+
         </View>
         <Text style={styles.txt}>A limpeza da areia quanto a lixos industrializados é satisfatória?</Text>
-        <View style={styles.check}>
-            <RadioButton            
-            />
-            <Text style={{fontSize:12}}>Sim = 25%</Text>
-            <RadioButton  
-          />
-          <Text  style={{fontSize:12}}>Não = 75%</Text>
+        <View >
+           
+            <Text>Sim = 25%    </Text>
+            <Text>Não = 75%</Text>
+
         </View>
         <Text style={styles.txt}> O estabelecimento passou alguma informação de concientização sobre o cuidado com as vidas marinhas?</Text>
-        <View style={styles.check}>
-          <RadioButton            
-              />
-              <Text style={{fontSize:12}}>Sim = 25%</Text>
-              <RadioButton  
-           />
-            <Text  style={{fontSize:12}}>Não = 75%</Text>
+        <View >
+           
+            <Text>Sim = 25%    </Text>
+            <Text>Não = 75%</Text>
+
         </View>
         <Text style={styles.txt}>Como você avalia esta experiência na sua vida?</Text>
-        <View style={styles.check}>
-            <RadioButton            
-            />
-            <Text style={{fontSize:12}}>Sem Valor Valor = 25%</Text>
-            <RadioButton  
-          />
-          <Text style={{fontSize:12}}>Pouco Valor = 75%</Text>
-          <RadioButton  
-          />
-          <Text style={{fontSize:12}}>Modificadora = 75%</Text>
+        <View>
+           
+         <Text>Sem Valor Valor = 25%    </Text>
+         <Text>Pouco Valor = 75%    </Text>
+         <Text>Modificadora = 75%</Text>
+
         </View>
     </View>
   </ScrollView>
@@ -150,13 +126,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+   
   },
   txt: {
     fontSize: 14,
     color: "black",
     margin:5,
     alignItems:'center',
-    justifyContent:'center'
+    justifyContent:'center',
+    fontWeight:'bold'
   },
   ViewBt2:{
     flexDirection: "row",

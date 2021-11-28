@@ -31,22 +31,26 @@ function Noota({navigation}) {
     }
   
     return (
+     
       <View style={{backgroundColor:'purple', flex:1}}> 
-       <><NavigationContainer independent={true}>
-            <Stack.Navigator >      
-                <Stack.Screen name="tela_notas" component={tela_nota} />          
-            </Stack.Navigator>
-          </NavigationContainer>
-  
-        <View style={styles.ViewBt}>
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => voltar_menuP()}
-                >
-                    <Text>Menu</Text>
-                </TouchableOpacity>
-            </View></>
-         </View>
+          <><NavigationContainer independent={true}>
+                <Stack.Navigator style={{justifyContent:'center', alignItems:'center', backgroundColor:'yellow'}} >      
+                    <Stack.Screen name="tela_notas" component={tela_nota} />          
+                </Stack.Navigator>
+              </NavigationContainer>
+        
+          <View style={styles.ViewBt}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => voltar_menuP()}
+              >
+              <Text>Menu</Text>
+            </TouchableOpacity>
+          </View>
+        </>
+      </View>
+      
+      
     );
   }
   
@@ -59,7 +63,7 @@ function Noota({navigation}) {
         margin:12,
         alignItems:'center',
         justifyContent:'center',
-        backgroundColor:"",
+       
       },
       check: {
         flexDirection: 'row',
