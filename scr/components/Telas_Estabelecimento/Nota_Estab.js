@@ -34,7 +34,7 @@ function Noota({navigation}) {
      
       <View style={{backgroundColor:'purple', flex:1}}> 
           <><NavigationContainer independent={true}>
-                <Stack.Navigator style={{justifyContent:'center', alignItems:'center', backgroundColor:'yellow'}} >      
+                <Stack.Navigator >      
                     <Stack.Screen name="tela_notas" component={tela_nota} />          
                 </Stack.Navigator>
               </NavigationContainer>
