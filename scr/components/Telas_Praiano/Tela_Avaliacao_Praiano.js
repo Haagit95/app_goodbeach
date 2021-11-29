@@ -394,7 +394,7 @@ const Stack = createNativeStackNavigator();
 
 function Tela_Avaliacao_Praiano({navigation}) {
   return (
-    <View style={{backgroundColor:'purple', flex:1}}> 
+    <View style={{backgroundColor:'#00FA9A', flex:1}}> 
     <><NavigationContainer independent={true}>
           <Stack.Navigator  initialRouteName="Pergunta 1">      
               <Stack.Screen name="Pergunta 1" component={Pergunta_1} />
@@ -412,15 +412,9 @@ function Tela_Avaliacao_Praiano({navigation}) {
       </NavigationContainer>
 
       <View style={styles.ViewBt}>
+             
               <TouchableOpacity
-                  style={styles.button}
-                  onPress={navigation.navigate('Pergunta 1')}
-              >
-                  <Text>Recomeçar</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                  style={styles.button}
+                  style={styles.button1}
                   onPress={() => navigation.navigate('Menu')}
               >
                   <Text>Menu</Text>
@@ -445,17 +439,6 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       padding:15
-      
-    },
-    button: {
-      backgroundColor: "#fff",
-      padding: 10,
-      borderRadius: 10,
-      margin: 20,
-      width:100,
-      height: 50,
-      justifyContent:'center',
-      alignItems: 'center'
     },
     ViewBt:{
       flexDirection: "row",
@@ -469,6 +452,17 @@ const styles = StyleSheet.create({
     ViewBt2:{
       flexDirection: "row",
       padding:20
+    },
+    button1: {
+      backgroundColor: "#fff",
+      padding: 5,
+      borderRadius: 10,
+      margin: 20,
+      width:120,
+      height: 30,
+      flexDirection: "row",
+      justifyContent:'center',
+      alignItems: 'center'
     },
    
   });

@@ -21,22 +21,22 @@ const Stack = createNativeStackNavigator();
 function MyStack() {
   return (
 
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName="Cadastro">
 
       <Stack.Screen name="Login" component={Tela_Login} />
       <Stack.Screen name="Conta" component={Conta} /> 
-      <Stack.Screen name="Esqueceu" component={Esqueceu} />
+      <Stack.Screen name="Esqueceu Senha" component={Esqueceu} />
     
-      <Stack.Screen name="Avaliação_Praiano" component={Tela_Avaliacao_Praiano} />
-      <Stack.Screen name="Ranking_praiano" component={Ranking} /> 
+      <Stack.Screen name="Avaliação" component={Tela_Avaliacao_Praiano} />
+      <Stack.Screen name="Ranking" component={Ranking} /> 
 
       <Stack.Screen name="Estabelecimento" component={Tela_Estabelecimento} />
       <Stack.Screen name="Nota" component={Nota_Estab} />
       <Stack.Screen name="Selo" component={Selo_Estab} />
-      <Stack.Screen name="Relatorio_Avaliação" component={Tela_RelatorioAvaliacao_Estabelecimento} />
-      <Stack.Screen name="Msgm" component={Mensagens} />
+      <Stack.Screen name="Relatorio da Avaliação" component={Tela_RelatorioAvaliacao_Estabelecimento} />
+      <Stack.Screen name="Sugestões e Críticas" component={Mensagens} />
 
-      <Stack.Screen name="Cadastro_Praiano_Estabelecimento" component={Cadastro_PxE} />
+      <Stack.Screen name="Cadastro" component={Cadastro_PxE} />
       <Stack.Screen name="Menu" component={Menu_Users} />
 
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Image, Text, View, Button, TouchableOpacity, ScrollView, Platform} from 'react-native';
+import { StyleSheet, Image, Text, View, Button, TouchableOpacity, ScrollView, FlatList} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -22,34 +22,52 @@ export default function Mensagens({ navigation}) {
   const Avaliac = () => {
     navigation.reset({
       index:0,
-      routes:[{name:"Relatorio_Avaliação"}]
+      routes:[{name:"Relatorio da Avaliação"}]
     })
   }
-  
-  return (
-    <View style={{backgroundColor:'purple', flex:1}}> 
-    <><NavigationContainer independent={true}>
-          <Stack.Navigator  initialRouteName="Sugestoes e criticas">      
-            <Stack.Screen name="Sugestoes e criticas" component={Men} />
-          </Stack.Navigator>
-      </NavigationContainer>
+  const user = [
+    {name:'João Silva', msgm:'blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1'},
+    {name:'Maria Luiza', msgm:'blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2'},
+    {name:'Julia Moura', msgm:'blablabla3blablabla3blablabla3blablabla3blablabla3blablblablabla2blablabla2blablabla2blablabla2blablabla2blablabla2abla3'},
+] 
+  return(
+    <View style={{flex:1,justifyContent:'center',alignItems:'center'}}> 
 
-      <View style={styles.ViewBt}>
-              <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => voltar_menuP()}
-              >
-                  <Text>Menu</Text>
-              </TouchableOpacity>
+      <View style={{flex:1,justifyContent:'center'}}>
+        <Text style={{fontWeight:'bold', fontSize:20}}>Mensagens de Sugestões e Críticas:</Text>
+     </View >
+     
+     <View style={{flex:8,justifyContent:'center',width:'95%'}}>
+        <FlatList
+            style={{flex:2}}
+            data={user}
+            renderItem={(obj) => {
+                return(
+                    <><><Text style={{ fontSize: 20 }}>{obj.item.name}</Text>
+                    <Text style={{ fontSize: 15 }}>{obj.item.msgm}</Text></>
+                    <Text>    </Text></>
+                )
+            }}
+        />
+      </View>
 
-              <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => Avaliac()}
-              >
-                  <Text >Relatório avaliação</Text>
-              </TouchableOpacity>
-          </View></>
-       </View>
+        <View style={styles.ViewBt}>
+          <TouchableOpacity
+            style={styles.button1}
+            onPress={() => voltar_menuP()}
+            >
+            <Text>Menu</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.button1}
+            onPress={() => Avaliac()}
+            >
+            <Text>Relatório</Text>
+          </TouchableOpacity>
+        </View>
+
+    </View>
   );
 }
 
@@ -74,8 +92,11 @@ const styles = StyleSheet.create({
   },
   ViewBt:{
     flexDirection: "row",
-    justifyContent: 'center'
-  },
+    justifyContent: 'center',
+    alignItems:'center',
+    backgroundColor: '#00FA9A',
+    width:'100%'
+  }, 
   button: {
     backgroundColor: "#fff",
     padding: 10,
@@ -83,6 +104,17 @@ const styles = StyleSheet.create({
     margin: 20,
     width:150,
     height: 50,
+    justifyContent:'center',
+    alignItems: 'center'
+  },
+  button1: {
+    backgroundColor: "#fff",
+    padding: 5,
+    borderRadius: 10,
+    margin: 20,
+    width:120,
+    height: 30,
+    flexDirection: "row",
     justifyContent:'center',
     alignItems: 'center'
   },

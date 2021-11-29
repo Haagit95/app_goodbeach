@@ -1,32 +1,37 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, View, Button, TextInput, TouchableOpacity, placeholder } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Input, Text, secureTextEntry } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { useState } from 'react';
+import { StyleSheet, View, Text,TouchableOpacity, Button } from 'react-native';
+
 
 export default function Manu({ navigation }) {
+   const log = () => {
+      navigation.reset({
+        index:0,
+        routes:[{name:"Login"}]
+      })
+    }
    
 
 return (
-    <View style={styles.container}>
-      <Text h4>Menu</Text>
+   <View style={{flex:1}}>
+       <View style={{flex:1,justifyContent:'center', alignItems:'center', width:'100%'}}>
+          <Text style={{fontWeight:'bold', fontSize:30}}>Escolha sua opção!</Text>
+       </View>
 
+      <View style={{flex:7, justifyContent:'space-around', alignItems:'center'}}>
         <View style={styles.ViewBt}>
            <TouchableOpacity style={styles.button} 
-              onPress={() => navigation.navigate('Msgm')}
+              onPress={() => navigation.navigate('Sugestões e Críticas')}
            >
-                <Text>Feedback</Text>
+                <Text style={styles.txt}>Feedback</Text>
            </TouchableOpacity>
         </View>
-
+      
         <View style={styles.ViewBt}>
            <TouchableOpacity style={styles.button} 
-              onPress={() => navigation.navigate('Relatorio_Avaliação')}
+              onPress={() => navigation.navigate('Relatorio da Avaliação')}
            >
-                <Text>Relatório</Text>
+             <Text style={styles.txt}>Relatório</Text>
            </TouchableOpacity>
         </View>
 
@@ -34,29 +39,37 @@ return (
            <TouchableOpacity style={styles.button} 
               onPress={() => navigation.navigate('Nota')}
            >
-                <Text>Nota</Text>
+               <Text>Nota</Text>
            </TouchableOpacity>
         </View>
         
         <View style={styles.ViewBt}>
            <TouchableOpacity style={styles.button} 
-              onPress={() => navigation.navigate('Ranking_praiano')}
+              onPress={() => navigation.navigate('Ranking')}
            >
-                <Text>Ranking</Text>
+                <Text style={styles.txt}>Ranking</Text>
            </TouchableOpacity>
         </View>
 
         <View style={styles.ViewBt}>
            <TouchableOpacity style={styles.button} 
-              onPress={() => navigation.navigate('Avaliação_Praiano')}
+              onPress={() => navigation.navigate('Avaliação')}
            >
-                <Text>Avaliação</Text>
+                <Text style={styles.txt}>Avaliação</Text>
            </TouchableOpacity>
         </View>
-        
+      </View>
 
-    </View>
 
+        <View style={{flex:1,backgroundColor:'#00FA9A', width:'100%',justifyContent:'center', alignItems:'center'}}>
+              <TouchableOpacity
+                  style={styles.button1}
+                  onPress={() => log()}
+              >
+                  <Text>Sair</Text>
+              </TouchableOpacity>
+        </View>
+      </View>
 );
 }
 /////////////////// Estilos Menu //////////////////////////////////////
@@ -65,13 +78,16 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         marginTop: 50,
-        backgroundColor: '#00FA9A',
         justifyContent: 'center',
       },
-
+      txt: {
+         fontWeight:'bold',
+         color:'white',
+         fontSize:19
+       },
      button: {
-        backgroundColor: "#A9A9A9",
-        padding: 10,
+        backgroundColor: "#1E90FF",
+        padding: 30,
         borderRadius: 10,
         marginTop: 16,
         width:300,
@@ -80,6 +96,17 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems: 'center'
       },
+      button1: {
+         backgroundColor: "#fff",
+         padding: 5,
+         borderRadius: 10,
+         margin: 20,
+         width:120,
+         height: 30,
+         flexDirection: "row",
+         justifyContent:'center',
+         alignItems: 'center'
+       },
           
       ViewBt:{
             flexDirection: "row",

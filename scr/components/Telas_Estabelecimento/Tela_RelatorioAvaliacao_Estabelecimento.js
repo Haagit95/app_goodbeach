@@ -1,13 +1,26 @@
 import * as React from 'react';
-import { StyleSheet, Image, Text, View, Button, TouchableOpacity, ScrollView, Platform} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { RadioButton} from 'react-native-paper';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
 
-function relatorio_perg (navigation){
-  return(
+
+export default function Tela_RelatorioAvaliacao_Estabelecimento({ navigation}) {
+  const voltar_menuP = () => {
+    navigation.reset({
+      index:0,
+      routes:[{name:"Menu"}]
+    })
+  }
+
+  const mensagem = () => {
+    navigation.reset({
+      index:0,
+      routes:[{name:"Sugestões e Críticas"}]
+    })
+  }
+  
+  return (
+  <View style={{flex:1}}> 
   <ScrollView>
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex:1, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={styles.txt}>O estabelecimento apresentou o App?</Text>
         <View>
            
@@ -70,51 +83,22 @@ function relatorio_perg (navigation){
         </View>
     </View>
   </ScrollView>
-  );
-}
-
-
-const Stack = createNativeStackNavigator();
-
-export default function Tela_RelatorioAvaliacao_Estabelecimento({ navigation}) {
-  const voltar_menuP = () => {
-    navigation.reset({
-      index:0,
-      routes:[{name:"Menu"}]
-    })
-  }
-
-  const mensagem = () => {
-    navigation.reset({
-      index:0,
-      routes:[{name:"Msgm"}]
-    })
-  }
-  
-  return (
-    <View style={{backgroundColor:'purple', flex:1}}> 
-    <><NavigationContainer independent={true}>
-          <Stack.Navigator  initialRouteName="Relatório de Questões">      
-            <Stack.Screen name="Relatório de Questões" component={relatorio_perg} />
-          
-          </Stack.Navigator>
-      </NavigationContainer>
 
       <View style={styles.ViewBt}>
               <TouchableOpacity
-                  style={styles.button}
+                  style={styles.button1}
                   onPress={() => voltar_menuP()}
               >
                   <Text>Menu</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
-                  style={styles.button}
+                  style={styles.button1}
                   onPress={() => mensagem()}
               >
                   <Text>Mensagens</Text>
               </TouchableOpacity>
-          </View></>
+          </View>
        </View>
   );
 }
@@ -131,7 +115,7 @@ const styles = StyleSheet.create({
   txt: {
     fontSize: 14,
     color: "black",
-    margin:5,
+    margin:8,
     alignItems:'center',
     justifyContent:'center',
     fontWeight:'bold'
@@ -141,24 +125,28 @@ const styles = StyleSheet.create({
     padding:10
   },
   ViewBt:{
+  
     flexDirection: "row",
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor:'#00FA9A', 
   },
-  button: {
-    backgroundColor: "#fff",
-    padding: 10,
-    borderRadius: 10,
-    margin: 20,
-    width:100,
-    height: 50,
-    justifyContent:'center',
-    alignItems: 'center'
-  },
+  
   check: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: 15
     
+  },
+  button1: {
+    backgroundColor: "#fff",
+    padding: 5,
+    borderRadius: 10,
+    margin: 20,
+    width:120,
+    height: 30,
+    flexDirection: "row",
+    justifyContent:'center',
+    alignItems: 'center'
   },
 });

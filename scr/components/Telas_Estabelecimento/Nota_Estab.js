@@ -1,60 +1,37 @@
 import * as React from 'react';
-import Checkbox from 'expo-checkbox';
-import { useState } from 'react';
 import { StyleSheet, Image, Text, View, Button, TouchableOpacity, Platform } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { RadioButton, TextInput} from 'react-native-paper';
 
-function tela_nota (){
-    return(
-        <View style={styles.txt}>
-            <Text style={{fontSize:30}}>
-                Nota Média:
-            </Text>
-            <Text style={{fontSize:30}}>
-                8,5
-            </Text>
-        </View>
-    )
-}
 
-const Stack = createNativeStackNavigator(); 
 
-function Noota({navigation}) {
+export default function Ranking ({navigation}) {
 
-    const voltar_menuP = () => {
-      navigation.reset({
-        index:0,
-        routes:[{name:"Menu"}]
-      })
-    }
-  
-    return (
-     
-      <View style={{backgroundColor:'purple', flex:1}}> 
-          <><NavigationContainer independent={true}>
-                <Stack.Navigator >      
-                    <Stack.Screen name="tela_notas" component={tela_nota} />          
-                </Stack.Navigator>
-              </NavigationContainer>
-        
-          <View style={styles.ViewBt}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => voltar_menuP()}
-              >
-              <Text>Menu</Text>
-            </TouchableOpacity>
-          </View>
-        </>
+  const voltar_menuP = () => {
+    navigation.reset({
+      index:0,
+      routes:[{name:"Menu"}]
+    })
+   }
+   return(
+    <View style={{flex:1,justifyContent:'center',alignItems:'center'}}> 
+
+     <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+       <Text style={{fontWeight:'bold', fontSize:40}}>Nota Média:</Text>
+       <Text style={{fontWeight:'bold', fontSize:40}}>8,5</Text>
       </View>
-      
-      
-    );
-  }
-  
-  export default Noota ;
+
+
+      <View style={styles.ViewBt}>
+        <TouchableOpacity
+          style={styles.button1}
+          onPress={() => voltar_menuP()}
+        >
+          <Text>Menu</Text>
+        </TouchableOpacity>
+      </View>
+
+    </View>
+  );
+ }
   
   const styles = StyleSheet.create({
       txt: {
@@ -64,13 +41,6 @@ function Noota({navigation}) {
         alignItems:'center',
         justifyContent:'center',
        
-      },
-      check: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding:15
-        
       },
       button: {
         backgroundColor: "#fff",
@@ -84,16 +54,19 @@ function Noota({navigation}) {
       },
       ViewBt:{
         flexDirection: "row",
-        justifyContent: 'center'
-      },
-      txtIn:{
-        width: 300,
-        height: 50,
-        margin: 20
-      },
-      ViewBt2:{
+        justifyContent: 'center',
+        backgroundColor: '#00FA9A',
+        width:'100%'
+      }, 
+      button1: {
+        backgroundColor: "#fff",
+        padding: 5,
+        borderRadius: 10,
+        margin: 20,
+        width:120,
+        height: 30,
         flexDirection: "row",
-        padding:20
+        justifyContent:'center',
+        alignItems: 'center'
       },
-     
     });

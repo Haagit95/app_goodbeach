@@ -34,124 +34,129 @@ export default function Cadastro_PxE({ navigation }) {
 return (
     //Formulario de cadastro:
     <View style={styles.container}>
-      <Text h4>Cadastro Praiano / Estabelecimento</Text>
+      <View style={{flex:1,justifyContent:'center', alignItems:'center'}}>
+         <Text h4>Faça seu cadastro aqui!</Text>
+      </View>
+        <View style={{flex:8}}>
+            <TextInput
+                placeholder="Nome"
+                onChangeText={value=> setName(value)}
+                style={styles.input}
+                keyboardType="text"
+            />
 
-        <TextInput
-            placeholder="Nome"
-            onChangeText={value=> setName(value)}
-            style={styles.input}
-            keyboardType="text"
-        />
+            <TextInput
+                placeholder="Razão Social"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setCorporateName(value)}
+                style={styles.input}
+                keyboardType="text"
+            />
 
-        <TextInput
-            placeholder="Razão Social"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setCorporateName(value)}
-            style={styles.input}
-            keyboardType="text"
-        />
+            <TextInput
+                placeholder="Nome Fantasia"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setFantasyName(value)}
+                style={styles.input}
+                keyboardType="text"
+            />
 
-        <TextInput
-            placeholder="Nome Fantasia"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setFantasyName(value)}
-            style={styles.input}
-            keyboardType="text"
-        />
+            <TextInput
+                placeholder="CPF"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setCpf(value)}
+                style={styles.input}
+                keyboardType="numeric"
+                options={{
+                    format: '999.999.999-99',
+                }}
+            />
 
-        <TextInput
-            placeholder="CPF"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setCpf(value)}
-            style={styles.input}
-            keyboardType="numeric"
-            options={{
-                format: '999.999.999-99',
-              }}
-        />
+            <TextInput
+                placeholder="CNPJ"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setCnpj(value)}
+                style={styles.input}
+                keyboardType="numeric"
+                options={{
+                    format: '99.999.999/9999-99',
+                }}
+            />
 
-        <TextInput
-            placeholder="CNPJ"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setCnpj(value)}
-            style={styles.input}
-            keyboardType="numeric"
-            options={{
-                format: '99.999.999/9999-99',
-              }}
-        />
+            <TextInput
+                placeholder="Contato"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setFone(value)}
+                style={styles.input}
+                keyboardType="text"
+            />
 
-        <TextInput
-            placeholder="Contato"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setFone(value)}
-            style={styles.input}
-            keyboardType="text"
-        />
+            <TextInput
+                placeholder="Digite seu E-mail"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setEmail(value)}
+                style={styles.input}
+                keyboardType="email-address"
+            />
 
-        <TextInput
-            placeholder="Digite seu E-mail"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setEmail(value)}
-            style={styles.input}
-            keyboardType="email-address"
-        />
+            <TextInput
+                placeholder="Data Nascimento"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setDateNasc(value)}
+                style={styles.input}
+                keyboardType="text"
+            />
 
-        <TextInput
-            placeholder="Data Nascimento"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setDateNasc(value)}
-            style={styles.input}
-            keyboardType="text"
-        />
+            <TextInput
+                placeholder="Data Fundação"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setDateFundation(value)}
+                style={styles.input}
+                keyboardType="text"
+            />
 
-        <TextInput
-            placeholder="Data Fundação"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setDateFundation(value)}
-            style={styles.input}
-            keyboardType="text"
-        />
+            <TextInput
+                placeholder="Endereço"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setAdreess(value)}
+                style={styles.input}
+                keyboardType="text"
+            />
 
-        <TextInput
-            placeholder="Endereço"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setAdreess(value)}
-            style={styles.input}
-            keyboardType="text"
-        />
+            <TextInput
+                placeholder="Sexo"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setSex(value)}
+                style={styles.input}
+                keyboardType="text"
+            />
 
-        <TextInput
-            placeholder="Sexo"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setSex(value)}
-            style={styles.input}
-            keyboardType="text"
-        />
+            <TextInput
+                placeholder="Total Colaboradores"
+                leftIcon={{type:'font-awesome', name:'envelope' }}
+                onChangeText={value=> setTotalEmployees(value)}
+                style={styles.input}
+                keyboardType="numeric"
+            
+            /> 
+            
 
-        <TextInput
-            placeholder="Total Colaboradores"
-            leftIcon={{type:'font-awesome', name:'envelope' }}
-            onChangeText={value=> setTotalEmployees(value)}
-            style={styles.input}
-            keyboardType="numeric"
-        /> 
-        
+            <View style={styles.ViewBt}>
+                <TouchableOpacity style={styles.button1}  
+                onPress={() => navigation.navigate('Menu')}
+                >
+                <Text style={{fontWeight:'bold', color:'white'}}>Cadastrar</Text>
+                </TouchableOpacity>
+    
+            </View>
 
-        <View style={styles.ViewBt}>
-            <TouchableOpacity style={styles.button1}  
-            onPress={() => navigation.navigate('Menu')}
-            >
-            <Text>Cadastrar</Text>
-            </TouchableOpacity>
- 
         </View>
 
-        <View style={styles.ViewBt}>
+        <View style={{flex:1,backgroundColor:'#00FA9A', width:'100%',justifyContent:'center', alignItems:'center'}}>
            <TouchableOpacity style={styles.button2} 
            onPress={()=> Tela_Login()}
            >
-                <Text>Sair</Text>
+                <Text style={{ color:'black'}}>Sair</Text>
            </TouchableOpacity>
         </View>
 
@@ -165,14 +170,14 @@ return (
 const styles = StyleSheet.create({
       container: {
         flex: 1,
-        backgroundColor: '#00FA9A',
+        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
 
       },
        input:{
          marginTop: 10,
-         backgroundColor: '#fff',
+         backgroundColor: '#7FFFD4',
          padding:3,
          width: 300,
          fontSize: 16,
@@ -181,7 +186,7 @@ const styles = StyleSheet.create({
        },
 
      button1: {
-        backgroundColor: "#A9A9A9",
+        backgroundColor: "#1E90FF",
         padding: 5,
         borderRadius: 10,
         margin: 20,
@@ -193,7 +198,7 @@ const styles = StyleSheet.create({
      },
 
      button2: {
-        backgroundColor: "#808080",
+        backgroundColor: "white",
         padding: 5,
         borderRadius: 10,
         margin: 20,
@@ -205,8 +210,10 @@ const styles = StyleSheet.create({
      },
 
      ViewBt:{
+            flex:1,
             flexDirection: "row",
-            justifyContent: 'center' 
+            justifyContent: 'center',
+            alignItems:'center'
           },
           
 

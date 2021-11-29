@@ -1,68 +1,91 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { StyleSheet, FlatList, Text, View, Button, TouchableOpacity, ScrollView, Platform} from 'react-native';
 
-export default function Ranking () {
-    <View>
-        <Text>
-        Ranking
-        </Text>
-    </View>
-}
 
-/*
-class piie extends React.PureComponent {
+export default function Ranking ({navigation}) {
 
-    render() {
+    const voltar_menuP = () => {
+        navigation.reset({
+          index:0,
+          routes:[{name:"Menu"}]
+        })
+      }
+    
+    const user = [
+        {pos: '1°',name:'Estab_1'},
+        {pos: '2°',name:'estab_2'},
+        {pos: '3°',name:'estab_3'},
+    ] 
+    return(
+        <View style={{flex:1,justifyContent:'center',alignItems:'center'}}> 
+          <View style={{flex:1,justifyContent:'center'}}>
+            <Text style={{fontWeight:'bold', fontSize:20}}>Ranking dos estabelecimentos melhores avaliados:</Text>
+         </View>
 
-        const data = [
-            {
-                key: 1,
-                amount: 40,
-                svg: { fill: 'red' },
-            },
-            {
-                key: 2,
-                amount: 50,
-                svg: { fill: 'blue' }
-            },
-          
-        ]
+            <FlatList
+                style={{flex:2}}
+                data={user}
+                renderItem={(obj) => {
+                    return(
+                        <Text  style={{ fontSize:20}}>{obj.item.pos} - {obj.item.name}</Text>
+                    )
+                }}
+            />
 
-        const Labels = ({ slices, height, width }) => {
-            return slices.map((slice, index) => {
-                const { labelCentroid, pieCentroid, data } = slice;
-                return (
-                    <Text
-                        key={index}
-                        x={pieCentroid[ 0 ]}
-                        y={pieCentroid[ 1 ]}
-                        fill={'white'}
-                        textAnchor={'middle'}
-                        alignmentBaseline={'middle'}
-                        fontSize={24}
-                        stroke={'black'}
-                        strokeWidth={0.2}
-                    >
-                        {data.amount}
-                    </Text>
-                )
-            })
-        }
+            <View style={styles.ViewBt}>
+              <TouchableOpacity
+                style={styles.button1}
+                onPress={() => voltar_menuP()}
+                >
+                <Text>Menu</Text>
+              </TouchableOpacity>
+            </View>
 
-        return (
-            <PieChart
-                style={{ height: 200 }}
-                valueAccessor={({ item }) => item.amount}
-                data={data}
-                spacing={0}
-                outerRadius={'95%'}
-            >
-                <Labels/>
-            </PieChart>
-        )
+        </View>
+      );
     }
-
-}
-export default piie;
-*/
-
+    
+    const styles = StyleSheet.create({
+        txt: {
+          fontSize: 18,
+          color: "black",
+          margin:12,
+          alignItems:'center',
+          justifyContent:'center',
+         
+        },
+        check: {
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding:15
+          
+        },
+        
+        ViewBt:{
+          flexDirection: "row",
+          justifyContent: 'center',
+          backgroundColor:'#00FA9A',
+          width:'100%'
+        },
+        txtIn:{
+          width: 300,
+          height: 50,
+          margin: 20
+        },
+        ViewBt2:{
+          flexDirection: "row",
+          padding:20
+        },
+        button1: {
+            backgroundColor: "#fff",
+            padding: 5,
+            borderRadius: 10,
+            margin: 20,
+            width:120,
+            height: 30,
+            flexDirection: "row",
+            justifyContent:'center',
+            alignItems: 'center'
+          },
+      });

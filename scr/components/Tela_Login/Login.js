@@ -20,7 +20,7 @@ export default function Tela_Login({ navigation}) {
     const Tela_Esqueceu = ()=>{
       navigation.reset({
         index:0,
-        routes:[{name: "Esqueceu"}]
+        routes:[{name: "Esqueceu Senha"}]
       })
     }
 
@@ -34,99 +34,13 @@ export default function Tela_Login({ navigation}) {
     const Tela_Cadastro_PxE = ()=>{
       navigation.reset({
         index:0,
-        routes:[{name: "Cadastro_Praiano_Estabelecimento"}]
+        routes:[{name: "Cadastro"}]
       })
     }
-
-    const Tela_Menu = ()=>{
-      navigation.reset({
-        index:0,
-        routes:[{name: "Menu"}]
-      })
-    }
-//
-    // const Tela_Entrar = ()=>{
-    //   navigation.reset({
-    //     index:0,
-    //     routes:[{name: "Esqueceu"}]
-    //   })
-    // } // DEFINIR QUAL TELA ACESSAR
 
   return (
     <View style={styles.container}>
-<<<<<<< HEAD
-      <Text h4>GoodBeach</Text>
-      <Text h4>Login</Text>
-
-      <Input
-        placeholder="E-mail"
-        leftIcon={{type:'font-awesome', name:'envelope' }}
-        style={styles}
-        onChangeText={value=> setEmail(value)}
-        secureTextEntry={true}
-        keyboardType="email-address"
-      />
-   
-      <Input
-        placeholder="Senha"
-        leftIcon={{type:'font-awesome', name:'lock' }}
-        style={styles}
-        onChangeText={value=> setPassword(value)}
-        keyboardType="password"
-      />
-      <View style={{flexDirection:'row', justifyContent:'center', marginBottom: 5}}>
-        <Button
-            icon={
-            <Icon
-            name="check"
-            size={10}
-            color="white"
-            />
-        }
-        title="Entrar" //Testar de acesso by LÉO
-        onPress={()=> Tela_Cadastro_PxE()}
-        //onPress={()=> Tela_Menu()}
-        //onPress={() => navigation.navigate('Menu')}
-
-        />
-            <Button
-            icon={
-            <Icon
-            name="check"
-            size={10}
-            color="white"
-            />
-        }
-        title="Esqueceu sua Senha?"
-        onPress={()=> Tela_Esqueceu()}
-        />
-    </View>
-        <Button
-        icon={
-        <Icon
-        name="check"
-        size={10}
-        color="white"
-        />
-    }
-    title="Registre-se"
-    onPress={()=> Tela_registre()}
-    />
-
-
-
-    {/* <Button
-            icon={
-            <Icon
-            name="check"
-            size={10}
-            color="white"
-            />
-        }
-        title="Cancelar"
-        /> */}
-=======
-
+      
       <Image
         style={{width: 250, height:250,alignItems:'stretch'}}
         source={require('../../Image/praia2.png')}/>
@@ -145,7 +59,6 @@ export default function Tela_Login({ navigation}) {
             secureTextEntry={true}
             keyboardType="email-address"
           />
->>>>>>> 3a3da09392e8c403c617a461fcb9f29eb5241d1c
       
           <Input
             placeholder="Password"
@@ -163,7 +76,7 @@ export default function Tela_Login({ navigation}) {
       <View style={{width:'50%',fontSize:18, paddingRight:10}}>
         <Button
           title="Entrar"
-          onPress={() => alert('entrar no sistema')}
+          onPress={() => Tela_Cadastro_PxE()}
         >
         </Button>
       </View>
@@ -171,7 +84,7 @@ export default function Tela_Login({ navigation}) {
       </View >
 
         <View style={{alignItems:'center', justifyContent:'center', flex:1}}>   
-           <Text onPress={()=> Tela_registre()} style={{fontSize:18, padding:10}}> Registre-se!</Text>
+           <Text onPress={()=> Tela_registre()} style={{fontSize:15, padding:10, fontWeight:'bold',textAlign:'center'}}> Registre-se!</Text>
         </View>
 
       <StatusBar style="auto" />
@@ -183,11 +96,9 @@ export default function Tela_Login({ navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#00FA9A',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
 
-//<Text onPress={()=> Tela_Esqueceu()} style={{width:'50%', fontSize:15}}> Esqueceu sua senha?</Text> 
-//<Text onPress={() => alert('entrar no sistema')} style={{width:'50%',fontSize:18,textAlign:'right', paddingRight:35}}> Entrar</Text>
