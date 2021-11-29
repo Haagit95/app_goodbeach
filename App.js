@@ -12,6 +12,8 @@ import Tela_RelatorioAvaliacao_Estabelecimento from './scr/components/Telas_Esta
 import Mensagens from './scr/components/Telas_Estabelecimento/Mensagens';
 import Conta from './scr/components/Tela_Login/Conta';
 import Esqueceu from './scr/components/Tela_Login/Esqueceu';
+import Cadastro_PxE from './scr/components/Telas_Cadastros/Cadastro_PxE';
+import Menu_Users from './scr/components/Tela_Menu/Menu_Users';
 /////////////////////////////////////////////////////////////////////////
 
 const Stack = createNativeStackNavigator();
@@ -33,6 +35,11 @@ function MyStack() {
       <Stack.Screen name="Selo" component={Selo_Estab} />
       <Stack.Screen name="Relatorio_Avaliação" component={Tela_RelatorioAvaliacao_Estabelecimento} />
       <Stack.Screen name="Msgm" component={Mensagens} />
+
+      <Stack.Screen name="Cadastro_Praiano_Estabelecimento" component={Cadastro_PxE} />
+      <Stack.Screen name="Menu" component={Menu_Users} />
+
+
     </Stack.Navigator>
   );
 }

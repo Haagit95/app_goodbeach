@@ -26,7 +26,7 @@ function Noota({navigation}) {
     const voltar_menuP = () => {
       navigation.reset({
         index:0,
-        routes:[{name:"Estabelecimento"}]
+        routes:[{name:"Menu"}]
       })
     }
   

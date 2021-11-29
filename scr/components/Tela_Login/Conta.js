@@ -45,7 +45,7 @@ return (
             keyboardType="email-address"
         />
         <TextInput
-            placeholder="Digite seu Password"
+            placeholder="Digite sua Senha"
             leftIcon={{type:'font-awesome', name:'lock' }}
             onChangeText={value=> setPassword(value)}
             style={styles.input}
@@ -53,7 +53,7 @@ return (
         />
 
         <TextInput
-            placeholder="Confirme o Password"
+            placeholder="Confirme sua Senha"
             leftIcon={{type:'font-awesome', name:'lock' }}
             onChangeText={value=> setConfirm(value)}
             style={styles.input}

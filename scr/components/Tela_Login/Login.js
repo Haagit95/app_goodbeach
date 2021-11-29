@@ -30,6 +30,20 @@ export default function Tela_Login({ navigation}) {
       })
     }
 
+    const Tela_Cadastro_PxE = ()=>{
+      navigation.reset({
+        index:0,
+        routes:[{name: "Cadastro_Praiano_Estabelecimento"}]
+      })
+    }
+
+    const Tela_Menu = ()=>{
+      navigation.reset({
+        index:0,
+        routes:[{name: "Menu"}]
+      })
+    }
+//
     // const Tela_Entrar = ()=>{
     //   navigation.reset({
     //     index:0,
@@ -52,7 +66,7 @@ export default function Tela_Login({ navigation}) {
       />
    
       <Input
-        placeholder="Password"
+        placeholder="Senha"
         leftIcon={{type:'font-awesome', name:'lock' }}
         style={styles}
         onChangeText={value=> setPassword(value)}
@@ -67,7 +81,11 @@ export default function Tela_Login({ navigation}) {
             color="white"
             />
         }
-        title="Entrar"
+        title="Entrar" //Testar de acesso by LÉO
+        onPress={()=> Tela_Cadastro_PxE()}
+        //onPress={()=> Tela_Menu()}
+        //onPress={() => navigation.navigate('Menu')}
+
         />
             <Button
             icon={

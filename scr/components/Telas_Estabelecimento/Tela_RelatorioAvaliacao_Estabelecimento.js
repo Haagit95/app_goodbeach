@@ -80,7 +80,7 @@ export default function Tela_RelatorioAvaliacao_Estabelecimento({ navigation}) {
   const voltar_menuP = () => {
     navigation.reset({
       index:0,
-      routes:[{name:"Estabelecimento"}]
+      routes:[{name:"Menu"}]
     })
   }
 
