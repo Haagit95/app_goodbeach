@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Input, Text, secureTextEntry } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useState } from 'react';
+import { RadioButton } from 'react-native-paper';
 
 export default function Cadastro_PxE({ navigation }) {
 
@@ -22,6 +23,7 @@ export default function Cadastro_PxE({ navigation }) {
     const [sex, setSex] = useState(null)
     const [totalEmployees, setTotalEmployees] = useState(null)
 
+    const [checked, setChecked] = React.useState('first');
 
 ////////////////////////////////////// Rotas onPress /////////////////////////////////////////////////////
     const Tela_Login = ()=>{ //function criada para resetar o navigation ao deslogar.
@@ -160,6 +162,22 @@ return (
            </TouchableOpacity>
         </View>
 
+        <View style={styles.check}>
+            <RadioButton
+                value="first"
+                status={ checked === 'first' ? 'checked' : 'unchecked' }
+                onPress={() => setChecked('first')}
+            />
+            <Text>Praiano</Text>
+
+            <RadioButton
+                value="second"
+                status={ checked === 'second' ? 'checked' : 'unchecked' }
+                onPress={() => setChecked('second')}
+            />
+            <Text>Estabelecimento</Text>
+        </View>
+
 
     </View>
 
@@ -215,7 +233,13 @@ const styles = StyleSheet.create({
             justifyContent: 'center',
             alignItems:'center'
           },
-          
+    
+          check: {
+            flexDirection: 'left',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding:15
+          }      
 
 
   })

@@ -21,7 +21,7 @@ const Stack = createNativeStackNavigator();
 function MyStack() {
   return (
 
-    <Stack.Navigator initialRouteName="Cadastro">
+    <Stack.Navigator initialRouteName="Login">
 
       <Stack.Screen name="Login" component={Tela_Login} />
       <Stack.Screen name="Conta" component={Conta} /> 

@@ -39,7 +39,7 @@ return (
            <TouchableOpacity style={styles.button} 
               onPress={() => navigation.navigate('Nota')}
            >
-               <Text>Nota</Text>
+               <Text style={styles.txt}>Nota</Text>
            </TouchableOpacity>
         </View>
         
