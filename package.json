@@ -33,9 +33,10 @@
     "react-native-screens": "~3.8.0",
     "react-native-select-multiple": "^2.1.0",
     "react-native-simple-radio-button": "^2.7.4",
+    "react-native-svg": "12.1.1",
     "react-native-svg-charts": "^5.4.0",
     "react-native-web": "0.17.1",
-    "react-native-svg": "12.1.1"
+    "typeorm": "^0.2.41"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
