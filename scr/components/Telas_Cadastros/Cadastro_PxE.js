@@ -162,23 +162,6 @@ return (
            </TouchableOpacity>
         </View>
 
-        <View style={styles.check}>
-            <RadioButton
-                value="first"
-                status={ checked === 'first' ? 'checked' : 'unchecked' }
-                onPress={() => setChecked('first')}
-            />
-            <Text>Praiano</Text>
-
-            <RadioButton
-                value="second"
-                status={ checked === 'second' ? 'checked' : 'unchecked' }
-                onPress={() => setChecked('second')}
-            />
-            <Text>Estabelecimento</Text>
-        </View>
-
-
     </View>
 
 );
@@ -235,7 +218,7 @@ const styles = StyleSheet.create({
           },
     
           check: {
-            flexDirection: 'left',
+            flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
             padding:15

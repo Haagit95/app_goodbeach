@@ -14,6 +14,7 @@ import Conta from './scr/components/Tela_Login/Conta';
 import Esqueceu from './scr/components/Tela_Login/Esqueceu';
 import Cadastro_PxE from './scr/components/Telas_Cadastros/Cadastro_PxE';
 import Menu_Users from './scr/components/Tela_Menu/Menu_Users';
+import Tipo_Cadastro from './scr/components/Telas_Cadastros/Tela_Tipo_Cad';
 /////////////////////////////////////////////////////////////////////////
 
 const Stack = createNativeStackNavigator();
@@ -37,6 +38,7 @@ function MyStack() {
       <Stack.Screen name="Sugestões e Críticas" component={Mensagens} />
 
       <Stack.Screen name="Cadastro" component={Cadastro_PxE} />
+      <Stack.Screen name="Tipo Cadastro" component={Tipo_Cadastro} />
       <Stack.Screen name="Menu" component={Menu_Users} />
 
 

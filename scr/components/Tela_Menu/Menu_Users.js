@@ -14,11 +14,11 @@ export default function Manu({ navigation }) {
 
 return (
    <View style={{flex:1}}>
-       <View style={{flex:1,justifyContent:'center', alignItems:'center', width:'100%'}}>
+       <View style={{flex:1,justifyContent:'flex-end', alignItems:'center', width:'100%'}}>
           <Text style={{fontWeight:'bold', fontSize:30}}>Escolha sua opção!</Text>
        </View>
 
-      <View style={{flex:7, justifyContent:'space-around', alignItems:'center'}}>
+      <View style={{flex:10, justifyContent:'space-evenly', alignItems:'center'}}>
         <View style={styles.ViewBt}>
            <TouchableOpacity style={styles.button} 
               onPress={() => navigation.navigate('Sugestões e Críticas')}
@@ -86,15 +86,16 @@ const styles = StyleSheet.create({
          fontSize:19
        },
      button: {
-        backgroundColor: "#1E90FF",
-        padding: 30,
-        borderRadius: 10,
-        marginTop: 16,
-        width:300,
-        height: 30,
-        flexDirection: "row",
-        justifyContent:'center',
-        alignItems: 'center'
+      padding: 30,
+      borderRadius: 10,
+      marginTop: 16,
+      width:300,
+      height:50,
+      flexDirection: "row",
+      justifyContent:'center',
+      alignItems: "center",
+      backgroundColor: "#1E90FF",
+      padding: 10,
       },
       button1: {
          backgroundColor: "#fff",
