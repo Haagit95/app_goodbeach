@@ -7,14 +7,20 @@ export default function Ranking ({navigation}) {
     const voltar_menuP = () => {
         navigation.reset({
           index:0,
-          routes:[{name:"Menu"}]
+          routes:[{name:"Menu Praiano"}]
         })
       }
     
     const user = [
-        {pos: '1°',name:'Estab_1'},
-        {pos: '2°',name:'estab_2'},
-        {pos: '3°',name:'estab_3'},
+      {pos: '1°',name:'Coqueiros'},
+      {pos: '2°',name:'Praia Mar'},
+      {pos: '3°',name:'Bela vista mar'},
+      {pos: '4°',name:'Areia branca'},
+      {pos: '5°',name:'Espaço Praia'},
+      {pos: '6°',name:'Praieiras'},
+      {pos: '7°',name:'Pinhal'},
+      {pos: '8°',name:'Estação Verão'},
+      {pos: '9°',name:'Água de coco'},
     ] 
     return(
         <View style={{flex:1,justifyContent:'center',alignItems:'center'}}> 
@@ -22,6 +28,7 @@ export default function Ranking ({navigation}) {
             <Text style={{fontWeight:'bold', fontSize:20}}>Ranking dos estabelecimentos melhores avaliados:</Text>
          </View>
 
+          <View style={{flex:3}}>
             <FlatList
                 style={{flex:2}}
                 data={user}
@@ -31,7 +38,7 @@ export default function Ranking ({navigation}) {
                     )
                 }}
             />
-
+          </View>
             <View style={styles.ViewBt}>
               <TouchableOpacity
                 style={styles.button1}

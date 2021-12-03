@@ -30,7 +30,7 @@ return (
     <View style={styles.container}>
 
       <View style={{flex:8, justifyContent:'center', alignItems:'center'}}>
-      <Text h4>Registro da Conta</Text>
+      <Text h4>Registre sua Conta aqui!</Text>
         <View style={{paddingBottom:30}}>
             <TextInput
                 placeholder="Digite seu Nome"

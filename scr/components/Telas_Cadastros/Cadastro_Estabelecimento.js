@@ -30,17 +30,17 @@ export default function Cadastro_Estabelecimento({ navigation }) {
     const Menu = ()=>{ //function criada para resetar o navigation ao deslogar.
         navigation.reset({
           index:0,
-          routes:[{name: "Menu"}]
+          routes:[{name: "Menu Estabelecimento"}]
         })
       }
 ////////////////////////////////////// Rederização //////////////////////////////////////////////////////
 return (
     //Formulario de cadastro:
     <View style={styles.container}>
-      <View style={{flex:1,justifyContent:'center', alignItems:'center'}}>
+      <View style={{flex:1,justifyContent:'flex-end', alignItems:'center'}}>
          <Text h4>Faça seu cadastro aqui!</Text>
       </View>
-        <View style={{flex:8}}>
+        <View style={{flex:6, justifyContent:'space-around'}}>
             <TextInput
                 placeholder="Razão Social"
                 leftIcon={{type:'font-awesome', name:'envelope' }}
@@ -110,6 +110,7 @@ return (
             
             /> 
             
+            </View>
 
             <View style={styles.ViewBt}>
                 <TouchableOpacity style={styles.button1}                  
@@ -120,8 +121,7 @@ return (
     
             </View>
 
-        </View>
-
+        
         <View style={{flex:1,backgroundColor:'#00FA9A', width:'100%',justifyContent:'center', alignItems:'center'}}>
            <TouchableOpacity style={styles.button2} 
            onPress={()=> Tela_Login()}
@@ -139,7 +139,7 @@ return (
 const styles = StyleSheet.create({
       container: {
         flex: 1,
-        backgroundColor: '#fff',
+       
         alignItems: 'center',
         justifyContent: 'center',
 
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
      },
 
      ViewBt:{
-            flex:1,
+            flex:2,
             flexDirection: "row",
             justifyContent: 'center',
             alignItems:'center'

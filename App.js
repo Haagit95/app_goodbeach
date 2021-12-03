@@ -12,10 +12,11 @@ import Tela_RelatorioAvaliacao_Estabelecimento from './scr/components/Telas_Esta
 import Mensagens from './scr/components/Telas_Estabelecimento/Mensagens';
 import Conta from './scr/components/Tela_Login/Conta';
 import Esqueceu from './scr/components/Tela_Login/Esqueceu';
-import Menu_Users from './scr/components/Tela_Menu/Menu_Users';
 import Tipo_Cadastro from './scr/components/Telas_Cadastros/Tela_Tipo_Cad';
 import Cadastro_Praiano from './scr/components/Telas_Cadastros/Cadastro_Praiano';
 import Cadastro_Estabelecimento from './scr/components/Telas_Cadastros/Cadastro_Estabelecimento';
+import Menu_Praiano from './scr/components/Tela_Menu/Menu_Praiano';
+import Menu_Estabelecimento from './scr/components/Tela_Menu/Menu_Estabelecimento';
 /////////////////////////////////////////////////////////////////////////
 
 const Stack = createNativeStackNavigator();
@@ -41,7 +42,9 @@ function MyStack() {
       <Stack.Screen name="Cadastro Praiano" component={Cadastro_Praiano} />
       <Stack.Screen name="Cadastro Estabelecimento" component={Cadastro_Estabelecimento} />
       <Stack.Screen name="Tipo Cadastro" component={Tipo_Cadastro} />
-      <Stack.Screen name="Menu" component={Menu_Users} />
+     
+      <Stack.Screen name="Menu Praiano" component={Menu_Praiano} />
+      <Stack.Screen name="Menu Estabelecimento" component={Menu_Estabelecimento} />
 
 
     </Stack.Navigator>

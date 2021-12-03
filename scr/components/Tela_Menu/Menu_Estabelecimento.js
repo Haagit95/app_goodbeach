@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, View, Text,TouchableOpacity, Button } from 'react-native';
 
 
-export default function Manu({ navigation }) {
+export default function Menu_Estabelecimento({ navigation }) {
    const log = () => {
       navigation.reset({
         index:0,
@@ -18,7 +18,7 @@ return (
           <Text style={{fontWeight:'bold', fontSize:30}}>Escolha sua opção!</Text>
        </View>
 
-      <View style={{flex:10, justifyContent:'space-evenly', alignItems:'center'}}>
+      <View style={{flex:7, justifyContent:'space-evenly', alignItems:'center'}}>
         <View style={styles.ViewBt}>
            <TouchableOpacity style={styles.button} 
             onPress={() => navigation.navigate('Sugestões e Críticas')}
@@ -41,22 +41,6 @@ return (
               onPress={() => navigation.navigate('Nota')}
            >
                <Text style={styles.txt}>Nota</Text>
-           </TouchableOpacity>
-        </View>
-        
-        <View style={styles.ViewBt}>
-           <TouchableOpacity style={styles.button} 
-              onPress={() => navigation.navigate('Ranking')}
-           >
-                <Text style={styles.txt}>Ranking</Text>
-           </TouchableOpacity>
-        </View>
-
-        <View style={styles.ViewBt}>
-           <TouchableOpacity style={styles.button} 
-              onPress={() => navigation.navigate('Avaliação')}
-           >
-                <Text style={styles.txt}>Avaliação</Text>
            </TouchableOpacity>
         </View>
       </View>
@@ -112,6 +96,7 @@ const styles = StyleSheet.create({
           
       ViewBt:{
             flexDirection: "row",
-            justifyContent: 'center'
+            justifyContent: 'space-between',
+           
       }
   })

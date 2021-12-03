@@ -28,17 +28,18 @@ export default function Cadastro_Praiano({ navigation }) {
     const Menu = ()=>{ //function criada para resetar o navigation ao deslogar.
         navigation.reset({
           index:0,
-          routes:[{name: "Menu"}]
+          routes:[{name: "Menu Praiano"}]
         })
       }
 ////////////////////////////////////// Rederização //////////////////////////////////////////////////////
 return (
     //Formulario de cadastro:
     <View style={styles.container}>
-      <View style={{flex:1,justifyContent:'center', alignItems:'center'}}>
+      <View style={{flex:1,justifyContent:'flex-end', alignItems:'center'}}>
          <Text h4>Faça seu cadastro aqui!</Text>
       </View>
-        <View style={{flex:8}}>
+
+        <View style={{flex:6, justifyContent:'space-around'}}>
             <TextInput
                 placeholder="Nome"
                 onChangeText={value=> setName(value)}
@@ -95,19 +96,17 @@ return (
                 onChangeText={value=> setSex(value)}
                 style={styles.input}
                 keyboardType="text"
-            /> 
-            
+            />
+        </View>
 
-            <View style={styles.ViewBt}>
+        <View style={styles.ViewBt}>
                 <TouchableOpacity style={styles.button1}  
                 onPress={() => Menu()}
                 >
                 <Text style={{fontWeight:'bold', color:'white'}}>Cadastrar</Text>
                 </TouchableOpacity>
     
-            </View>
-
-        </View>
+          </View>
 
         <View style={{flex:1,backgroundColor:'#00FA9A', width:'100%',justifyContent:'center', alignItems:'center'}}>
            <TouchableOpacity style={styles.button2} 
@@ -126,7 +125,7 @@ return (
 const styles = StyleSheet.create({
       container: {
         flex: 1,
-        backgroundColor: '#fff',
+      
         alignItems: 'center',
         justifyContent: 'center',
 
@@ -166,12 +165,11 @@ const styles = StyleSheet.create({
      },
 
      ViewBt:{
-            flex:1,
-            flexDirection: "row",
-            justifyContent: 'center',
-            alignItems:'center'
-          },
-    
+      flex:2,
+      flexDirection: "row",
+      justifyContent: 'center',
+      alignItems:'center'
+    },
           check: {
             flexDirection: 'row',
             justifyContent: 'center',

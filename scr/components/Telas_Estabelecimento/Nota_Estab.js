@@ -8,15 +8,15 @@ export default function Ranking ({navigation}) {
   const voltar_menuP = () => {
     navigation.reset({
       index:0,
-      routes:[{name:"Menu"}]
+      routes:[{name:"Menu Estabelecimento"}]
     })
    }
    return(
     <View style={{flex:1,justifyContent:'center',alignItems:'center'}}> 
 
      <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-       <Text style={{fontWeight:'bold', fontSize:40}}>Nota Média:</Text>
-       <Text style={{fontWeight:'bold', fontSize:40}}>8,5</Text>
+       <Text style={{fontWeight:'bold', fontSize:30}}>Nota Média:</Text>
+       <Text style={{fontWeight:'bold', fontSize:30}}>8,5</Text>
       </View>
 
 

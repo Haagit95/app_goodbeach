@@ -22,9 +22,14 @@ export default function Tipo_Cadastro({ navigation }) {
 return (
     //Tela opção de tipo de cadastro
     <View style={styles.container}>
-      <View style={{flex:8,justifyContent:'space-around', alignItems:'center'}}>
-       
-          <View style={styles.ViewBt}>  
+     
+      <View style={{flex:8,justifyContent:'center', alignItems:'center'}}>
+              
+        <View style={styles.ViewBt}> 
+
+        <View style={{ justifyContent:'flex-start', alignItems:'center', width:'100%'}}>
+              <Text style={{fontWeight:'bold', fontSize:30}}>Escolha sua opção de Cadastro!</Text>
+          </View>
                 <TouchableOpacity 
                 style={styles.button}  
                 onPress={() => navigation.navigate('Cadastro Praiano')}            
@@ -65,14 +70,14 @@ const styles = StyleSheet.create({
       button: {
         padding: 30,
         borderRadius: 10,
-        marginTop: 16,
+        marginTop: 50,
         width:300,
         height:50,
         flexDirection: "row",
         justifyContent:'center',
         alignItems: "center",
         backgroundColor: "#1E90FF",
-        padding: 10,
+        
         
       },
      button2: {

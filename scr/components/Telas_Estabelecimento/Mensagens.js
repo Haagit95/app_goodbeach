@@ -15,7 +15,7 @@ export default function Mensagens({ navigation}) {
   const voltar_menuP = () => {
     navigation.reset({
       index:0,
-      routes:[{name:"Menu"}]
+      routes:[{name:"Menu Estabelecimento"}]
     })
   }
 
@@ -26,9 +26,16 @@ export default function Mensagens({ navigation}) {
     })
   }
   const user = [
-    {name:'João Silva', msgm:'blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1blablabla1'},
-    {name:'Maria Luiza', msgm:'blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2blablabla2'},
-    {name:'Julia Moura', msgm:'blablabla3blablabla3blablabla3blablabla3blablabla3blablblablabla2blablabla2blablabla2blablabla2blablabla2blablabla2abla3'},
+    {name:'João Silva', msgm:'Prai muito bem limpa e com boas ondas, parabens a todos envolvidos com o projeto de limpeza das praias.'},
+    {name:'Maria Luiza', msgm:'Sem lixeiras em alguns pontos e ninguem verificou.'},
+    {name:'Julia Moura', msgm:'Muito bom ter um estabelcimento que cuide das praias.'},
+    {name:'Julia Moura', msgm:'Muito bom ter um estabelcimento que cuide das praias.Muito bom ter um estabelcimento que cuide das praias'},
+    {name:'Julia Moura', msgm:'Muito bom ter um estabelcimento que cuide das praias.'},
+    {name:'Julia Moura', msgm:'Muito bom ter um estabelcimento que cuide das praias.Muito bom ter um estabelcimento que cuide das praias'},
+    {name:'Julia Moura', msgm:'Muito bom ter um estabelcimento que cuide das praias.Muito bom ter um estabelcimento que cuide das praias'},
+    {name:'Julia Moura', msgm:'Muito bom ter um estabelcimento que cuide das praias.'},
+    {name:'Julia Moura', msgm:'Muito bom ter um estabelcimento que cuide das praias.Muito bom ter um estabelcimento que cuide das praias'},
+    {name:'Julia Moura', msgm:'Muito bom ter um estabelcimento que cuide das praias.Muito bom ter um estabelcimento que cuide das praias'},
 ] 
   return(
     <View style={{flex:1,justifyContent:'center',alignItems:'center'}}> 
@@ -37,7 +44,7 @@ export default function Mensagens({ navigation}) {
         <Text style={{fontWeight:'bold', fontSize:20}}>Mensagens de Sugestões e Críticas:</Text>
      </View >
      
-     <View style={{flex:8,justifyContent:'center',width:'95%'}}>
+     <View style={{flex:8,justifyContent:'center',width:'90%'}}>
         <FlatList
             style={{flex:2}}
             data={user}

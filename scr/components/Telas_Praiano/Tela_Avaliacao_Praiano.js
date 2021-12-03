@@ -415,7 +415,7 @@ function Tela_Avaliacao_Praiano({navigation}) {
              
               <TouchableOpacity
                   style={styles.button1}
-                  onPress={() => navigation.navigate('Menu')}
+                  onPress={() => navigation.navigate('Menu Praiano')}
               >
                   <Text>Menu</Text>
               </TouchableOpacity>
