@@ -6,24 +6,16 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Input, Text, secureTextEntry } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useState } from 'react';
-import { RadioButton } from 'react-native-paper';
 
-export default function Cadastro_PxE({ navigation }) {
+export default function Cadastro_Praiano({ navigation }) {
 
     const [name, setName] = useState(null)
-    const [corporateName, setCorporateName] = useState(null)
-    const [fantasyName, setFantasyName] = useState(null)
     const [cpf, setCpf] = useState(null)
-    const [cnpj, setCnpj] = useState(null)
     const [fone, setFone] = useState(null)
     const [email, setEmail] = useState(null)
     const [dateNasc, setDateNasc] = useState(null)
-    const [dateFoundation, setDateFundation] = useState(null)
     const [address, setAdreess] = useState(null)
     const [sex, setSex] = useState(null)
-    const [totalEmployees, setTotalEmployees] = useState(null)
-
-    const [checked, setChecked] = React.useState('first');
 
 ////////////////////////////////////// Rotas onPress /////////////////////////////////////////////////////
     const Tela_Login = ()=>{ //function criada para resetar o navigation ao deslogar.
@@ -32,6 +24,13 @@ export default function Cadastro_PxE({ navigation }) {
         routes:[{name: "Login"}]
       })
     }
+
+    const Menu = ()=>{ //function criada para resetar o navigation ao deslogar.
+        navigation.reset({
+          index:0,
+          routes:[{name: "Menu"}]
+        })
+      }
 ////////////////////////////////////// Rederização //////////////////////////////////////////////////////
 return (
     //Formulario de cadastro:
@@ -48,22 +47,6 @@ return (
             />
 
             <TextInput
-                placeholder="Razão Social"
-                leftIcon={{type:'font-awesome', name:'envelope' }}
-                onChangeText={value=> setCorporateName(value)}
-                style={styles.input}
-                keyboardType="text"
-            />
-
-            <TextInput
-                placeholder="Nome Fantasia"
-                leftIcon={{type:'font-awesome', name:'envelope' }}
-                onChangeText={value=> setFantasyName(value)}
-                style={styles.input}
-                keyboardType="text"
-            />
-
-            <TextInput
                 placeholder="CPF"
                 leftIcon={{type:'font-awesome', name:'envelope' }}
                 onChangeText={value=> setCpf(value)}
@@ -71,17 +54,6 @@ return (
                 keyboardType="numeric"
                 options={{
                     format: '999.999.999-99',
-                }}
-            />
-
-            <TextInput
-                placeholder="CNPJ"
-                leftIcon={{type:'font-awesome', name:'envelope' }}
-                onChangeText={value=> setCnpj(value)}
-                style={styles.input}
-                keyboardType="numeric"
-                options={{
-                    format: '99.999.999/9999-99',
                 }}
             />
 
@@ -110,14 +82,6 @@ return (
             />
 
             <TextInput
-                placeholder="Data Fundação"
-                leftIcon={{type:'font-awesome', name:'envelope' }}
-                onChangeText={value=> setDateFundation(value)}
-                style={styles.input}
-                keyboardType="text"
-            />
-
-            <TextInput
                 placeholder="Endereço"
                 leftIcon={{type:'font-awesome', name:'envelope' }}
                 onChangeText={value=> setAdreess(value)}
@@ -131,21 +95,12 @@ return (
                 onChangeText={value=> setSex(value)}
                 style={styles.input}
                 keyboardType="text"
-            />
-
-            <TextInput
-                placeholder="Total Colaboradores"
-                leftIcon={{type:'font-awesome', name:'envelope' }}
-                onChangeText={value=> setTotalEmployees(value)}
-                style={styles.input}
-                keyboardType="numeric"
-            
             /> 
             
 
             <View style={styles.ViewBt}>
                 <TouchableOpacity style={styles.button1}  
-                onPress={() => navigation.navigate('Menu')}
+                onPress={() => Menu()}
                 >
                 <Text style={{fontWeight:'bold', color:'white'}}>Cadastrar</Text>
                 </TouchableOpacity>

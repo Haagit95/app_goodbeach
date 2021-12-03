@@ -21,7 +21,8 @@ return (
       <View style={{flex:10, justifyContent:'space-evenly', alignItems:'center'}}>
         <View style={styles.ViewBt}>
            <TouchableOpacity style={styles.button} 
-              onPress={() => navigation.navigate('Sugestões e Críticas')}
+            onPress={() => navigation.navigate('Sugestões e Críticas')}
+             
            >
                 <Text style={styles.txt}>Feedback</Text>
            </TouchableOpacity>

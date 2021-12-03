@@ -16,6 +16,7 @@ export default function Tipo_Cadastro({ navigation }) {
           routes:[{name: "Login"}]
         })
       }
+
   ////////////////////////////////////// Rederização //////////////////////////////////////////////////////
 
 return (
@@ -26,13 +27,13 @@ return (
           <View style={styles.ViewBt}>  
                 <TouchableOpacity 
                 style={styles.button}  
-                onPress={() => navigation.navigate('Cadastro')}
+                onPress={() => navigation.navigate('Cadastro Praiano')}            
                 >
                 <Text style={{fontWeight:'bold', color:'white', fontSize:18}}>Praiano</Text>
                 </TouchableOpacity>
               
                 <TouchableOpacity style={styles.button}  
-                onPress={() => navigation.navigate('Cadastro')}
+                onPress={() => navigation.navigate('Cadastro Estabelecimento')}
                 >
                 <Text style={{fontWeight:'bold', color:'white', fontSize:18}}>Estabelecimento</Text>
                 </TouchableOpacity>          
